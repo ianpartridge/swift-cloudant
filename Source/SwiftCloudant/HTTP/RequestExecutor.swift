@@ -82,7 +82,7 @@ class OperationRequestExecutor: InterceptableSessionDelegate {
         
         if let response = response {
             #if os(Linux)
-                httpInfo = HTTPInfo(statusCode: response.statusCode, headers: response.allHeaderFields)
+                httpInfo = HTTPInfo(statusCode: response.statusCode, headers: response.allHeaderFields as! [String: String])
             #else
                 var headers:[String: String] = [:]
                 for (key, value) in response.allHeaderFields {

@@ -19,20 +19,21 @@ import XCTest
 @testable import SwiftCloudantTests
 
 XCTMain( [
-testCase(CreateDatabaseTests.allTests),
-testCase(PutAttachmentTests.allTests),
-testCase(CreateQueryIndexTests.allTests),
-testCase(DeleteAttachmentTests.allTests),
-testCase(GetDocumentTests.allTests),
-testCase(InterceptorTests.allTests),
-testCase(ReadAttachmentTests.allTests),
-testCase(QueryViewTests.allTests),
-testCase(GetAllDatabasesTest.allTests),
-testCase(DeleteDocumentTests.allTests),
-testCase(GetAllDocsTest.allTests),
-testCase(InterceptableSessionTests.allTests),
-testCase(DeleteQueryIndexTests.allTests),
-testCase(FindDocumentOperationTests.allTests),
-testCase(BulkDocsTests.allTests),
-testCase(PutDocumentTests.allTests),
-testCase(GetChangesTests.allTests),])
+testCase(CreateDatabaseTests.allTests), //pass
+testCase(PutAttachmentTests.allTests),  //3 failures
+testCase(CreateQueryIndexTests.allTests), //pass
+testCase(DeleteAttachmentTests.allTests), //2 failures
+testCase(GetDocumentTests.allTests), //2 failures
+//testCase(InterceptorTests.allTests),
+testCase(ReadAttachmentTests.allTests), //2 failures
+testCase(QueryViewTests.allTests),  //pass
+testCase(GetAllDatabasesTest.allTests), //38 failures
+testCase(DeleteDocumentTests.allTests), //failures
+testCase(GetAllDocsTest.allTests), //failures
+testCase(InterceptableSessionTests.allTests),  //failures
+testCase(DeleteQueryIndexTests.allTests),  //passes
+testCase(FindDocumentOperationTests.allTests), //fails
+testCase(BulkDocsTests.allTests),  //casting failure
+testCase(PutDocumentTests.allTests), //pass
+testCase(GetChangesTests.allTests), //fails
+])

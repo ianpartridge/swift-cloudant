@@ -16,6 +16,7 @@
 
 import Foundation
 import XCTest
+import Dispatch
 @testable import SwiftCloudant
 
 // Extension to add functions for commonly used operations in tests.
@@ -79,6 +80,7 @@ extension XCTestCase {
             if let httpInfo = httpInfo {
                 XCTAssert(httpInfo.statusCode / 100 == 2)
             }
+            print(error)
             XCTAssertNil(error)
         }
         let nsOperation = Operation(couchOperation: create)
@@ -92,6 +94,7 @@ extension XCTestCase {
             if let httpInfo = httpInfo {
                 XCTAssert(httpInfo.statusCode / 100 == 2)
             }
+            print(error)
             XCTAssertNil(error)
         }
         client.add(operation: delete).waitUntilFinished()

@@ -18,6 +18,7 @@
 
 import Foundation
 import XCTest
+import Dispatch
 @testable import SwiftCloudant
 
 let testCookieHeaderValue = "AuthSession=cm9vdDo1MEJCRkYwMjq0LO0ylOIwShrgt8y-UkhI-c6BGw; Version=1; Domain=.cloudant.com; Path=/; HttpOnly";
@@ -470,7 +471,7 @@ class InterceptableSessionURLProtocol: URLProtocol {
             }
     
             // convert the allHeaderFileds into [String: String]
-            let cookies = HTTPCookie.cookies(withResponseHeaderFields: response.headerFields, for: response.url!)
+            let cookies = HTTPCookie.cookies(withResponseHeaderFields: response.headerFields, forURL: response.url!)
     
             let storage = HTTPCookieStorage.shared
                 storage.setCookies(cookies, for: url, mainDocumentURL: nil)

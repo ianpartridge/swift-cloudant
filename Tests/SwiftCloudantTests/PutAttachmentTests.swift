@@ -85,6 +85,7 @@ class PutAttachmentTests : XCTestCase {
 
     func createPutAttachmentOperation(completionHandler: (([String : Any]?, HTTPInfo?, Error?) -> Void)? = nil) -> PutAttachmentOperation {
         let attachment = "This is my awesome essay attachment for my document"
+        print(revId)
         let put = PutAttachmentOperation(name: "myAwesomeAttachment",
                                   contentType: "text/plain",
             data: attachment.data(using: String.Encoding.utf8, allowLossyConversion: false)!,

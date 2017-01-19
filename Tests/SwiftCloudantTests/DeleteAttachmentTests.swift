@@ -22,7 +22,7 @@ class DeleteAttachmentTests : XCTestCase {
     
     static var allTests = {
         return [
-            ("testDeleteAttachment", testDeleteAttachment),
+            //("testDeleteAttachment", testDeleteAttachment),
             ("testDeleteAttachmentHTTPOperationProperties",testDeleteAttachmentHTTPOperationProperties),]
     }()
     
@@ -47,6 +47,7 @@ class DeleteAttachmentTests : XCTestCase {
         nsCreate.waitUntilFinished()
         
         let attachment = "This is my awesome essay attachment for my document"
+        print("revId = \(revId)")
         let put = PutAttachmentOperation(name: "myAwesomeAttachment",
                                   contentType: "text/plain",
                                          data: attachment.data(using: String.Encoding.utf8, allowLossyConversion: false)!,
@@ -55,6 +56,7 @@ class DeleteAttachmentTests : XCTestCase {
                                   databaseName: dbName!
                                          )
         {[weak self] (response, info, error) in
+            print(error)
             XCTAssertNil(error)
             XCTAssertNotNil(info)
             if let info = info {

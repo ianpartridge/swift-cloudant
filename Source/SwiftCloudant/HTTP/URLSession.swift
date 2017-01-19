@@ -457,9 +457,9 @@ internal class InterceptableSession: NSObject, URLSessionDelegate, URLSessionTas
         #else
             let platform = "Unknown";
         #endif
-        let frameworkBundle = Bundle(for: InterceptableSession.self)
-        var bundleDisplayName = frameworkBundle.object(forInfoDictionaryKey: "CFBundleName")
-        var bundleVersionString = frameworkBundle.object(forInfoDictionaryKey: "CFBundleShortVersionString")
+        //let frameworkBundle = Bundle(for: InterceptableSession.self)
+        var bundleDisplayName: String? = nil//frameworkBundle.object(forInfoDictionaryKey: "CFBundleName")
+        var bundleVersionString: String?  = nil//frameworkBundle.object(forInfoDictionaryKey: "CFBundleShortVersionString")
 
         if bundleDisplayName == nil {
             bundleDisplayName = "SwiftCloudant"
