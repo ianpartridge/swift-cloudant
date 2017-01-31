@@ -22,7 +22,7 @@ class DeleteAttachmentTests : XCTestCase {
     
     static var allTests = {
         return [
-            //("testDeleteAttachment", testDeleteAttachment),
+            ("testDeleteAttachment", testDeleteAttachment),
             ("testDeleteAttachmentHTTPOperationProperties",testDeleteAttachmentHTTPOperationProperties),]
     }()
     

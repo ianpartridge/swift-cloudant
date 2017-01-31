@@ -62,9 +62,9 @@ public class Operation: Foundation.Operation, HTTPRequestOperation
         }
         set {
             if mExecuting != newValue {
-                    willChangeValue(forKey: "isExecuting")
+                willChangeValue(forKey: "isExecuting")
                 mExecuting = newValue
-                    didChangeValue(forKey: "isExecuting")
+                didChangeValue(forKey: "isExecuting")
             }
         }
     }
@@ -76,9 +76,9 @@ public class Operation: Foundation.Operation, HTTPRequestOperation
         }
         set {
             if mFinished != newValue {
-                    willChangeValue(forKey: "isFinished")
+                willChangeValue(forKey: "isFinished")
                 mFinished = newValue
-                    didChangeValue(forKey: "isFinished")
+                didChangeValue(forKey: "isFinished")
             }
         }
     }
