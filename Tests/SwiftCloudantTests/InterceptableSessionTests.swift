@@ -471,7 +471,7 @@ class InterceptableSessionURLProtocol: URLProtocol {
             }
     
             // convert the allHeaderFileds into [String: String]
-            let cookies = HTTPCookie.cookies(withResponseHeaderFields: response.headerFields, forURL: response.url!)
+            let cookies = HTTPCookie.cookies(withResponseHeaderFields: response.headerFields, for: response.url!)
     
             let storage = HTTPCookieStorage.shared
                 storage.setCookies(cookies, for: url, mainDocumentURL: nil)
